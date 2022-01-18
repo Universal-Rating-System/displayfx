@@ -1,6 +1,6 @@
-Project Short Description (default ini)
+Inset headline here
 
-    Project long description or extended summary goes in here (default ini)
+    Insert description here
 
 =======
 Testing
