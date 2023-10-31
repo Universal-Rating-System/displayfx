@@ -3,13 +3,17 @@
 Define the fixture functions in this file to make them accessible across multiple test files.
 '''
 import datetime
-from pathlib import Path
-import pytest
 import sys
+from pathlib import Path
 from tempfile import mkdtemp
-from beetools import get_os, msg_error, rm_tree
+
 import configparserext
-from github import Github, GithubException as gh_exc
+import pytest
+from beetools import get_os
+from beetools import msg_error
+from beetools import rm_tree
+from github import Github
+from github import GithubException as gh_exc
 
 _DESC = __doc__.split('\n')[0]
 _PATH = Path(__file__)
@@ -173,7 +177,7 @@ _PROJECT_CLASSIFIERS = [
 ]
 
 
-_PROJECT_NAME = "displayfx"
+_PROJECT_NAME = 'displayfx'
 _RELEASE_YAML_PROD = '''name: Build distribution
 
 on: [push, pull_request]
@@ -252,42 +256,18 @@ class EnvSetUp:
         self.classifiers = _CLASSIFIERS
         self.external_arc_dir = self.dir / 'external_archive'
         self.external_arc_dir.mkdir(parents=True)
-        self.index_rst_badge_codecov = _INDEX_RST_BADGE_CODECOV.format(
-            self.project_name
-        )
-        self.index_rst_badge_github_ci = _INDEX_RST_BADGE_GITHUB_CI.format(
-            self.project_name
-        )
-        self.index_rst_badge_github_license = _INDEX_RST_BADGE_GITHUB_LICENSE.format(
-            self.project_name
-        )
-        self.index_rst_badge_github_hits = _INDEX_RST_BADGE_GITHUB_HITS.format(
-            self.project_name
-        )
-        self.index_rst_badge_github_issues = _INDEX_RST_BADGE_GITHUB_ISSUES.format(
-            self.project_name
-        )
-        self.index_rst_badge_github_pre_commit = (
-            _INDEX_RST_BADGE_GITHUB_PRE_COMMIT.format(self.project_name)
-        )
-        self.index_rst_badge_github_release = _INDEX_RST_BADGE_GITHUB_RELEASE.format(
-            self.project_name
-        )
-        self.index_rst_badge_pypi_version = _INDEX_RST_BADGE_PYPI_VERSION.format(
-            self.project_name
-        )
-        self.index_rst_badge_pypi_dl = _INDEX_RST_BADGE_PYPI_DL.format(
-            self.project_name
-        )
-        self.index_rst_badge_pypi_status = _INDEX_RST_BADGE_PYPI_STATUS.format(
-            self.project_name
-        )
-        self.index_rst_badge_pypi_wheel = _INDEX_RST_BADGE_PYPI_WHEEL.format(
-            self.project_name
-        )
-        self.index_rst_badge_pyversions = _INDEX_RST_BADGE_PYVERSIONS.format(
-            self.project_name
-        )
+        self.index_rst_badge_codecov = _INDEX_RST_BADGE_CODECOV.format(self.project_name)
+        self.index_rst_badge_github_ci = _INDEX_RST_BADGE_GITHUB_CI.format(self.project_name)
+        self.index_rst_badge_github_license = _INDEX_RST_BADGE_GITHUB_LICENSE.format(self.project_name)
+        self.index_rst_badge_github_hits = _INDEX_RST_BADGE_GITHUB_HITS.format(self.project_name)
+        self.index_rst_badge_github_issues = _INDEX_RST_BADGE_GITHUB_ISSUES.format(self.project_name)
+        self.index_rst_badge_github_pre_commit = _INDEX_RST_BADGE_GITHUB_PRE_COMMIT.format(self.project_name)
+        self.index_rst_badge_github_release = _INDEX_RST_BADGE_GITHUB_RELEASE.format(self.project_name)
+        self.index_rst_badge_pypi_version = _INDEX_RST_BADGE_PYPI_VERSION.format(self.project_name)
+        self.index_rst_badge_pypi_dl = _INDEX_RST_BADGE_PYPI_DL.format(self.project_name)
+        self.index_rst_badge_pypi_status = _INDEX_RST_BADGE_PYPI_STATUS.format(self.project_name)
+        self.index_rst_badge_pypi_wheel = _INDEX_RST_BADGE_PYPI_WHEEL.format(self.project_name)
+        self.index_rst_badge_pyversions = _INDEX_RST_BADGE_PYVERSIONS.format(self.project_name)
         self.index_rst_contents = _INDEX_RST_CONTENTS.format(self.project_name)
         self.project_classifiers = _PROJECT_CLASSIFIERS
         self.packageit_ini_pth = self.make_packageit_ini()
@@ -306,13 +286,9 @@ class EnvSetUp:
     def create_mock_files(self):
         project_root_dir = self.dir / self.project_name
         src_dir = project_root_dir / 'src' / self.project_name.lower()
-        (src_dir / '{}.py'.format(self.project_name.lower())).write_text(
-            'Test file\nThis file is included'
-        )
-        (src_dir / '{}.pyc'.format(self.project_name.lower())).write_text(
-            'Test file\nThis file is excluded'
-        )
-        (src_dir / '{}.ini'.format(self.project_name.lower())).write_text('[Folders]\n')
+        (src_dir / f'{self.project_name.lower()}.py').write_text('Test file\nThis file is included')
+        (src_dir / f'{self.project_name.lower()}.pyc').write_text('Test file\nThis file is excluded')
+        (src_dir / f'{self.project_name.lower()}.ini').write_text('[Folders]\n')
         pass
 
     def del_github_repo(self):
@@ -324,20 +300,14 @@ class EnvSetUp:
             repo.delete()
         except gh_exc as err:
             if err.status != 404:  # Repo does not exist
-                print(
-                    msg_error(
-                        '{} - {}\nSystem terminated.'.format(
-                            err.status, err.data['message']
-                        )
-                    )
-                )
+                print(msg_error('{} - {}\nSystem terminated.'.format(err.status, err.data['message'])))
                 sys.exit()
         pass
 
     def make_packageit_ini(self):
         '''Make INI file for testing'''
         packageit_ini_pth = self.dir / 'pimt.ini'
-        ini = configparserext.ConfigParserExt(inline_comment_prefixes="#")
+        ini = configparserext.ConfigParserExt(inline_comment_prefixes='#')
         ini['Classifiers'] = {
             'DevStatus': 'Development Status :: 1 - Planning',
             'IntendedAudience002': 'Intended Audience :: Developers',
@@ -355,10 +325,10 @@ class EnvSetUp:
             'AuthorEmail': 'ann.other@testmodule.com',
             'HeaderDescription': 'Project Header Description (default ini)',
             'LongDescription': 'Project long description goes in here (default ini)',
-            '{}ProjectAnchorDir'.format(get_os()): self.dir,
-            '{}ProjectIniDir'.format(get_os()): Path(self.dir, 'ini'),
+            f'{get_os()}ProjectAnchorDir': self.dir,
+            f'{get_os()}ProjectIniDir': Path(self.dir, 'ini'),
             'PythonRequires': '>=3.6',
-            'Url': 'www.{}.com'.format(self.project_name.lower()),
+            'Url': f'www.{self.project_name.lower()}.com',
             'Type': 'Module',
         }
 
@@ -412,19 +382,19 @@ class EnvSetUp:
             'TokenFileName': 'readthedocs_token.txt',
         }
         ini['Sphinx'] = {
-            'Enable': "Yes",
+            'Enable': 'Yes',
             'ConfPyInstr001': "extensions = ['sphinx.ext.autodoc']",
             'ConfPyInstr010': "templates_path = ['_templates']",
             'ConfPyInstr020': "language = 'en'",
-            'ConfPyInstr030': "exclude_patterns = []",
+            'ConfPyInstr030': 'exclude_patterns = []',
             'ConfPyInstr040': "html_theme = 'agogo'",
             'ConfPyInstr050': "html_static_path = ['_static']",
-            'AddSection001': "Installation",
-            'AddSection010': "Usage",
-            'AddSection020': "Support",
-            'AddContent001': "conventions",
-            'AddContent010': "api",
-            'AddContent020': "donotexist",
+            'AddSection001': 'Installation',
+            'AddSection010': 'Usage',
+            'AddSection020': 'Support',
+            'AddContent001': 'conventions',
+            'AddContent010': 'api',
+            'AddContent020': 'donotexist',
         }
         ini['tool:pytest'] = {
             'addopts_cmd': '--doctest-modules '
@@ -433,16 +403,14 @@ class EnvSetUp:
             '--ignore-glob=*/Archive '
             '--ignore-glob=*/Templates '
             '--cov-report=html',
-            'addopts_ide': '--ignore-glob=*/VersionArchive '
-            '--ignore-glob=*/Archive '
-            '--cov-report=html',
+            'addopts_ide': '--ignore-glob=*/VersionArchive ' '--ignore-glob=*/Archive ' '--cov-report=html',
         }
         ini['VEnv'] = {
             'Enable': 'Yes',
             'Upgrade': 'Yes',
             'ReinstallVEnv': 'No',
-            '{}VEnvBaseFolder'.format(get_os()): self.dir,
-            '{}VEnvAnchorDir'.format(get_os()): self.dir / 'venv',
+            f'{get_os()}VEnvBaseFolder': self.dir,
+            f'{get_os()}VEnvAnchorDir': self.dir / 'venv',
         }
         with open(packageit_ini_pth, 'w') as ini_file:
             ini.write(ini_file)
@@ -458,7 +426,7 @@ class EnvSetUp:
         )
         if not project_ini_pth.parents[0].exists():
             project_ini_pth.parents[0].mkdir(parents=True)
-        ini = configparserext.ConfigParserExt(inline_comment_prefixes="#")
+        ini = configparserext.ConfigParserExt(inline_comment_prefixes='#')
         ini['Classifiers'] = {
             'DevStatus': 'Development Status :: 1 - Planning',
             'IntendedAudience002': 'Intended Audience :: Developers',
@@ -497,9 +465,7 @@ class EnvSetUp:
             '--ignore-glob=*/Archive '
             '--ignore-glob=*/Templates '
             '--cov-report=html',
-            'addopts_ide': '--ignore-glob=*/VersionArchive '
-            '--ignore-glob=*/Archive '
-            '--cov-report=html',
+            'addopts_ide': '--ignore-glob=*/VersionArchive ' '--ignore-glob=*/Archive ' '--cov-report=html',
         }
         ini['VEnv'] = {}
         with open(project_ini_pth, 'w') as project_ini_file:
@@ -507,9 +473,7 @@ class EnvSetUp:
         return project_ini_pth
 
     def make_project_name(self):
-        return '{}_{}'.format(
-            _PROJECT_NAME, datetime.datetime.now().strftime('%y%m%d%H%M%S%f')
-        )
+        return '{}_{}'.format(_PROJECT_NAME, datetime.datetime.now().strftime('%y%m%d%H%M%S%f'))
 
 
 @pytest.fixture

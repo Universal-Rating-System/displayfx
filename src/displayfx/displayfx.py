@@ -3,8 +3,9 @@
 Insert description here
 '''
 import logging
-from pathlib import Path
 import sys
+from pathlib import Path
+
 import beetools
 
 _VERSION = '1.3.3'
@@ -15,11 +16,9 @@ _name = _path.stem
 class DisplayFx:
     '''Display progress indicator on CRT (Dos) screen'''
 
-    def __init__(
-        self, p_parent_logger_name, p_max_val, p_verbose=False, p_msg='', p_bar_len=50
-    ):
+    def __init__(self, p_parent_logger_name, p_max_val, p_verbose=False, p_msg='', p_bar_len=50):
         '''Initialize the class'''
-        self.logger_name = '{}.{}'.format(p_parent_logger_name, _name)
+        self.logger_name = f'{p_parent_logger_name}.{_name}'
         self.logger = logging.getLogger(self.logger_name)
         self.logger.info('Start')
         self.version = _VERSION
@@ -61,7 +60,7 @@ class DisplayFx:
         if self.max_val >= self.bar_len:
             self.marker_slice = self.bar_len / self.max_val
         if not self.silent:
-            print('{}'.format(self.msg), end='', flush=True)
+            print(f'{self.msg}', end='', flush=True)
             if self.max_val == 0:
                 print(self.leader_str)
 
@@ -116,9 +115,7 @@ def do_tests(p_app_path='', p_cls=True):
                     ),
                     p_len=23,
                 )
-                t_displayfx = DisplayFx(
-                    _name, max_val, p_msg=subject, p_bar_len=bar_len
-                )
+                t_displayfx = DisplayFx(_name, max_val, p_msg=subject, p_bar_len=bar_len)
                 for x in range(0, max_val):
                     t_displayfx.update(x)
         return success
@@ -133,9 +130,7 @@ def do_tests(p_app_path='', p_cls=True):
     file_handle.setLevel(beetools.DEF_LOG_LEV_FILE)
     console_handle = logging.StreamHandler()
     console_handle.setLevel(beetools.DEF_LOG_LEV_CON)
-    file_format = logging.Formatter(
-        beetools.LOG_FILE_FORMAT, datefmt=beetools.LOG_DATE_FORMAT
-    )
+    file_format = logging.Formatter(beetools.LOG_FILE_FORMAT, datefmt=beetools.LOG_DATE_FORMAT)
     console_format = logging.Formatter(beetools.LOG_CONSOLE_FORMAT)
     file_handle.setFormatter(file_format)
     console_handle.setFormatter(console_format)
