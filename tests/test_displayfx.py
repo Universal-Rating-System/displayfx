@@ -1,6 +1,6 @@
 from beetools import msg as beemsg
 
-from displayfx.displayfx import DisplayFx
+from src import DisplayFx
 
 
 def basic_test():
