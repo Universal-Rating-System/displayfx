@@ -1,10 +1,10 @@
 from beetools import msg as beemsg
 
-from src import DisplayFx
+from displayfx import DisplayFx
 
 
-def basic_test():
-    '''Basic and mandatory scenario tests for certification of the class'''
+def test_example():
+    """THis is intended as an example for usage.  Proper tests still have to be implemented"""
     success = True
     bar_len_list = [10, 30, 50, 100]
     # bar_len_list = [ 100 ]
@@ -21,4 +21,4 @@ def basic_test():
             t_displayfx = DisplayFx(max_val, p_msg=subject, p_bar_len=bar_len)
             for x in range(0, max_val):
                 t_displayfx.update(x)
-    return success
+    assert success is True

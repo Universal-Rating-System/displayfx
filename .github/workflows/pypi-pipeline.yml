@@ -12,13 +12,11 @@ jobs:
     needs: Pre-Commit
     uses: ./.github/workflows/check-rst-documentation.yml
 
-# Add CI back into the workflow when the tests are sorted
-#  CI:
-#    uses: ./.github/workflows/ci.yml
-#    needs: Check-Documentation
+  CI:
+    uses: ./.github/workflows/ci.yml
+    needs: Check-Documentation
 
   Build-and-Release-to-Pypi:
-#    needs: CI
-    needs: Check-Documentation
+    needs: CI
     if: startsWith(github.ref, 'refs/tags/')
     uses: ./.github/workflows/build-and-release-to-pypi.yml
