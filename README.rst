@@ -82,17 +82,6 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     #. Checkout master since it assumes that the branch is now merged with master and will be deleted.
     #. display a list of all the current branches as a reminder to delete the branch on completion.
 
-.. code-block:: bash
-
-    # Set next version number
-    export RELEASE = x.x.x
-
-    # Create tags
-    git commit --allow -empty -m "Release $RELEASE"
-    git tag -a $RELEASE -m "Version $RELEASE"
-
-    # Push
-    git push upstream --tags
 
 .. General
 
