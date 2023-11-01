@@ -1,6 +1,6 @@
 [project]
 name = 'DisplayFX'
-version = '2.0.2'
+version = '2.0.3'
 authors = [
     { name = 'Hendrik du Toit', email = 'hendrik@brightedge.co.za' },
 ]
@@ -60,8 +60,8 @@ skip = 'documentation/Archive/*'
 source = ['src']
 
 [tool.pytest.ini_options]
-#addopts = ['--import-mode=importlib', '-vv', '--ignore-glob=*\Archive']
-addopts = ["--import-mode=importlib", '-vv', '--ignore-glob=*\Archive','--cov=./src/', '--cov-report=html']
+addopts = ['--import-mode=importlib', '-vv', '--ignore-glob=*\Archive']
+#addopts = ["--import-mode=importlib", '-vv', '--ignore-glob=*\Archive','--cov=./src/', '--cov-report=html']
 pythonpath = ['src','src/rte-db', 'tests' ]
 markers = [
     "select: Run a selection of tests",
