@@ -1,7 +1,3 @@
-'''Inset headline here
-
-Insert description here
-'''
 import logging
 import sys
 from pathlib import Path

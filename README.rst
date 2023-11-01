@@ -1,6 +1,5 @@
-=======
-Testing
-=======
+DisplayFX
+=========
 
 +-----------+------------------------------------------------------------------------------------+
 |**General**| |maintenance_y| |semver| |license|                                                 |
@@ -11,7 +10,8 @@ Testing
 +-----------+------------------------------------------------------------------------------------+
 |**Github** | |gh_issues| |gh_language| |gh_last_commit| |gh_deployment|                         |
 +-----------+------------------------------------------------------------------------------------+
-This project uses ``pytest`` to run tests and also to test docstring examples.
+
+Display progress indicator on CRT screen
 
 
 Installation
@@ -19,7 +19,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install beetools
+    pip install displayfx
 
 
 Tests
@@ -104,8 +104,8 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
     :target: http://unmaintained.tech/
     :alt: Maintenance - intended
 
-.. |license| image:: https://img.shields.io/pypi/l/BEETools
-    :target: https://github.com/BrightEdgeeServices/beetools/blob/master/LICENSE
+.. |license| image:: https://img.shields.io/pypi/l/displayfx
+    :target: https://github.com/BrightEdgeeServices/displayfx/blob/master/LICENSE
     :alt: License
 
 .. |semver| image:: https://img.shields.io/badge/Semantic%20Versioning-2.0.0-brightgreen.svg?style=flat-square
@@ -119,60 +119,60 @@ bit easier.  The scripts make use of the ``gitit`` module to simplify tasks.
 
 .. CI
 
-.. |pre_commit_ci| image:: https://img.shields.io/github/actions/workflow/status/BrightEdgeeServices/beetools/pypi-pipeline.yml?label=pre-commit
-    :target: https://github.com/BrightEdgeeServices/beetools/blob/master/.github/workflows/pre-commit.yml
+.. |pre_commit_ci| image:: https://img.shields.io/github/actions/workflow/status/BrightEdgeeServices/displayfx/pypi-pipeline.yml?label=pre-commit
+    :target: https://github.com/BrightEdgeeServices/displayfx/blob/master/.github/workflows/pre-commit.yml
     :alt: Pre-Commit
 
-.. |gha_tests| image:: https://img.shields.io/github/actions/workflow/status/BrightEdgeeServices/beetools/pypi-pipeline.yml?label=ci
-    :target: https://github.com/BrightEdgeeServices/beetools/blob/master/.github/workflows/ci.yml
+.. |gha_tests| image:: https://img.shields.io/github/actions/workflow/status/BrightEdgeeServices/displayfx/pypi-pipeline.yml?label=ci
+    :target: https://github.com/BrightEdgeeServices/displayfx/blob/master/.github/workflows/ci.yml
     :alt: Test status
 
-.. |gha_docu| image:: https://img.shields.io/readthedocs/beetools
-    :target: https://github.com/BrightEdgeeServices/beetools/blob/master/.github/workflows/check-rst-documentation.yml
+.. |gha_docu| image:: https://img.shields.io/readthedocs/displayfx
+    :target: https://github.com/BrightEdgeeServices/displayfx/blob/master/.github/workflows/check-rst-documentation.yml
     :alt: Read the Docs
 
-.. |codecov| image:: https://img.shields.io/codecov/c/github/BrightEdgeeServices/beetools
-    :target: https://app.codecov.io/gh/BrightEdgeeServices/beetools
+.. |codecov| image:: https://img.shields.io/codecov/c/github/BrightEdgeeServices/displayfx
+    :target: https://app.codecov.io/gh/BrightEdgeeServices/displayfx
     :alt: CodeCov
 
 
 .. PyPI
 
-.. |pypi_release| image:: https://img.shields.io/pypi/v/beetools
-    :target: https://pypi.org/project/beetools/
+.. |pypi_release| image:: https://img.shields.io/pypi/v/displayfx
+    :target: https://pypi.org/project/displayfx/
     :alt: PyPI - Package latest release
 
-.. |pypi_py_versions| image:: https://img.shields.io/pypi/pyversions/beetools
-    :target: https://pypi.org/project/beetools/
+.. |pypi_py_versions| image:: https://img.shields.io/pypi/pyversions/displayfx
+    :target: https://pypi.org/project/displayfx/
     :alt: PyPI - Supported Python Versions
 
-.. |pypi_format| image:: https://img.shields.io/pypi/wheel/beetools
-    :target: https://pypi.org/project/beetools/
+.. |pypi_format| image:: https://img.shields.io/pypi/wheel/displayfx
+    :target: https://pypi.org/project/displayfx/
     :alt: PyPI - Format
 
-.. |pypi_downloads| image:: https://img.shields.io/pypi/dm/beetools
-    :target: https://pypi.org/project/beetools/
+.. |pypi_downloads| image:: https://img.shields.io/pypi/dm/displayfx
+    :target: https://pypi.org/project/displayfx/
     :alt: PyPI - Monthly downloads
 
-.. |pypi_status| image:: https://img.shields.io/pypi/status/beetools
-    :target: https://pypi.org/project/beetools/
+.. |pypi_status| image:: https://img.shields.io/pypi/status/displayfx
+    :target: https://pypi.org/project/displayfx/
     :alt: PyPI - Status
 
 
 .. GitHub
 
-.. |gh_issues| image:: https://img.shields.io/github/issues-raw/BrightEdgeeServices/beetools
-    :target: https://github.com/BrightEdgeeServices/beetools/issues
+.. |gh_issues| image:: https://img.shields.io/github/issues-raw/BrightEdgeeServices/displayfx
+    :target: https://github.com/BrightEdgeeServices/displayfx/issues
     :alt: GitHub - Issue Counter
 
-.. |gh_language| image:: https://img.shields.io/github/languages/top/BrightEdgeeServices/beetools
-    :target: https://github.com/BrightEdgeeServices/beetools
+.. |gh_language| image:: https://img.shields.io/github/languages/top/BrightEdgeeServices/displayfx
+    :target: https://github.com/BrightEdgeeServices/displayfx
     :alt: GitHub - Top Language
 
-.. |gh_last_commit| image:: https://img.shields.io/github/last-commit/BrightEdgeeServices/beetools/master
-    :target: https://github.com/BrightEdgeeServices/beetools/commit/master
+.. |gh_last_commit| image:: https://img.shields.io/github/last-commit/BrightEdgeeServices/displayfx/master
+    :target: https://github.com/BrightEdgeeServices/displayfx/commit/master
     :alt: GitHub - Last Commit
 
-.. |gh_deployment| image:: https://img.shields.io/github/deployments/BrightEdgeeServices/beetools/pypi
-    :target: https://github.com/BrightEdgeeServices/beetools/deployments/pypi
+.. |gh_deployment| image:: https://img.shields.io/github/deployments/BrightEdgeeServices/displayfx/pypi
+    :target: https://github.com/BrightEdgeeServices/displayfx/deployments/pypi
     :alt: GitHub - PiPy Deployment

@@ -4,7 +4,7 @@ version = '2.0.0'
 authors = [
     { name = 'Hendrik du Toit', email = 'hendrik@brightedge.co.za' },
 ]
-description = 'Simple Terminal progress indicator.'
+description = 'Display progress indicator on CRT screen.'
 license = {file = 'LICENSE'}
 classifiers = [
     'Development Status :: 5 - Production/Stable',
