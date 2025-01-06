@@ -1,9 +1,27 @@
+import pytest
 from beetools import msg as beemsg
 
 from displayfx import DisplayFx
 
 
-def test_example():
+@pytest.mark.parametrize(
+    "max_val, bar_len",
+    [
+        pytest.param(0, 50),
+    ],
+)
+def test_update(max_val, bar_len):
+    subject = beemsg.display("Foo", p_len=23)
+    t_displayfx = DisplayFx(max_val, p_msg=subject, p_bar_len=bar_len)
+    for x in range(0, max_val):
+        t_displayfx.update(x)
+    t_displayfx.update(0)
+    t_displayfx.update(0)
+    t_displayfx.update(0)
+    pass
+
+
+def test_do_example():
     """THis is intended as an example for usage.  Proper tests still have to be implemented"""
     success = True
     bar_len_list = [10, 30, 50, 100]
@@ -15,7 +33,7 @@ def test_example():
     for bar_len in bar_len_list:
         for max_val in max_val_list:
             subject = beemsg.display(
-                'Bar {: >{x}}, Max {: >{y}}'.format(bar_len, max_val, x=max_bar_len_list_len, y=max_vax_val_list_len),
+                "Bar {: >{x}}, Max {: >{y}}".format(bar_len, max_val, x=max_bar_len_list_len, y=max_vax_val_list_len),
                 p_len=23,
             )
             t_displayfx = DisplayFx(max_val, p_msg=subject, p_bar_len=bar_len)
