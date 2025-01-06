@@ -1,19 +1,20 @@
 """Create a conftest.py
 Define the fixture functions in this file to make them accessible across multiple test files.
 """
+
 from pathlib import Path
 from tempfile import mkdtemp
 
 import pytest
 from beetools.utils import rm_tree
 
-_DESC = __doc__.split('\n')[0]
+_DESC = __doc__.split("\n")[0]
 _PATH = Path(__file__)
 
 
 class WorkingDir:
     def __init__(self):
-        self.dir = Path(mkdtemp(prefix='displayfx_'))
+        self.dir = Path(mkdtemp(prefix="displayfx_"))
 
 
 class EnvSetUp:
