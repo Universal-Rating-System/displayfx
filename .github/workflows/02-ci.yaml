@@ -8,6 +8,7 @@ jobs:
     runs-on: ${{matrix.os}}
     env:
       GH_REPO_ACCESS_BY_OWN_APPS: ${{ secrets.GH_REPO_ACCESS_BY_OWN_APPS }}
+      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
       VENV_ENVIRONMENT: ${{vars.VENV_ENVIRONMENT}}
 
     strategy:
