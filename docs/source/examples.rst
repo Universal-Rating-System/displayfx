@@ -1,6 +1,6 @@
 .. role:: raw-html(raw)
     :format: html
-	
+
 ========
 Examples
 ========
@@ -9,7 +9,7 @@ Examples
 **Insert Example #1 description in here**
 -----------------------------------------
 
-.. code-block:: bash
+.. code-block:: python
 
    import pympdule
    t_pm = pympdule.Pymodule('ParentName')
@@ -19,7 +19,7 @@ Examples
 **Insert Example #2 description in here**
 -----------------------------------------
 
-.. code-block:: bash
+.. code-block:: python
 
    import pympdule
    t_pm = pympdule.Pymodule('ParentName', p_logger = True, p_verpbose = True)
