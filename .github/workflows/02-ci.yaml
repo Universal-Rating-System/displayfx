@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{matrix.os}}
     env:
       GH_REPO_ACCESS_BY_OWN_APPS: ${{ secrets.GH_REPO_ACCESS_BY_OWN_APPS }}
-      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN_MASTER}}
       VENV_ENVIRONMENT: ${{vars.VENV_ENVIRONMENT}}
 
     strategy:
@@ -57,4 +57,4 @@ jobs:
           files: coverage.xml
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN_MASTER }}
-          slug: BrightEdgeeServices/DisplayFX
+          slug: BrightEdgeeServices/displayfx
