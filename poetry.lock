@@ -57,6 +57,21 @@ docs = ["furo", "jaraco.packaging (>=9.3)", "rst.linker (>=1.9)", "sphinx (>=3.5
 testing = ["jaraco.test", "pytest (!=8.0.*)", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)"]
 
 [[package]]
+name = "beetools"
+version = "5.2.5"
+description = "Tools for batch scripts, virtual environments and utilities."
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "beetools-5.2.5-py3-none-any.whl", hash = "sha256:50ed6cefa5d028472bfb7f645ce77193153f53833a5838a439b735ecccaa23a6"},
+    {file = "beetools-5.2.5.tar.gz", hash = "sha256:3ab129fee1363e31344f6771c4ae74dfb937c4c2ffa9fa4eca0d9e452e86e93b"},
+]
+
+[package.dependencies]
+termcolor = ">=2.5.0,<3.0.0"
+
+[[package]]
 name = "black"
 version = "25.1.0"
 description = "The uncompromising code formatter."
@@ -1862,6 +1877,21 @@ standalone = ["Sphinx (>=5)"]
 test = ["pytest"]
 
 [[package]]
+name = "termcolor"
+version = "2.5.0"
+description = "ANSI color formatting for output in terminal"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "termcolor-2.5.0-py3-none-any.whl", hash = "sha256:37b17b5fc1e604945c2642c872a3764b5d547a48009871aea3edd3afa180afb8"},
+    {file = "termcolor-2.5.0.tar.gz", hash = "sha256:998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"},
+]
+
+[package.extras]
+tests = ["pytest", "pytest-cov"]
+
+[[package]]
 name = "tomli"
 version = "2.2.1"
 description = "A lil' TOML parser"
@@ -2035,4 +2065,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10"
-content-hash = "18e97460e11c738c3a0bd4b7519a0297b9b20c6cf79fb855a755630db990ca66"
+content-hash = "bc9f231fe4316bbd4ab5a9ba6717c8c240526003ef364de9e2d2be6d09d5fabf"

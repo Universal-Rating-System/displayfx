@@ -18,6 +18,7 @@ description = 'Display progress indicator on CRT screen.'
 	'Programming Language :: Python :: 3.11',
     ]
     dependencies = [
+    "beetools (>=5.2.5,<6.0.0)"
     ]
     license = "MIT"
     # license = "Proprietary"
