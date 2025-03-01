@@ -11,7 +11,6 @@
   - readthedocs.yaml
   - rstcheck.cfg
 - Delete redundant files
-  - fixdate.bat
   - install.ps1
 - Add utility scripts
   - SetupDotEnv.ps1
