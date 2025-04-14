@@ -57,6 +57,21 @@ docs = ["furo", "jaraco.packaging (>=9.3)", "rst.linker (>=1.9)", "sphinx (>=3.5
 testing = ["jaraco.test", "pytest (!=8.0.*)", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)"]
 
 [[package]]
+name = "beetools"
+version = "5.2.5"
+description = "Tools for batch scripts, virtual environments and utilities."
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "beetools-5.2.5-py3-none-any.whl", hash = "sha256:50ed6cefa5d028472bfb7f645ce77193153f53833a5838a439b735ecccaa23a6"},
+    {file = "beetools-5.2.5.tar.gz", hash = "sha256:3ab129fee1363e31344f6771c4ae74dfb937c4c2ffa9fa4eca0d9e452e86e93b"},
+]
+
+[package.dependencies]
+termcolor = ">=2.5.0,<3.0.0"
+
+[[package]]
 name = "black"
 version = "25.1.0"
 description = "The uncompromising code formatter."
@@ -2050,4 +2065,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10"
-content-hash = "81c59afb3ae988c6617418a0666cfb7b6192bc428a6080ca1e3f3023225cc4f4"
+content-hash = "255f1f70acf4f678be27953ffe39c0bc3f545b9befb2586ea07a2c0dd2230648"
