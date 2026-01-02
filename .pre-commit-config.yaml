@@ -27,7 +27,7 @@ repos:
         additional_dependencies:
           - mdformat-black
           - mdformat-gfm
-          - mdformat_frontmatter
+#          - mdformat_frontmatter
 
   - repo: https://github.com/rstcheck/rstcheck
     rev: v6.2.5
