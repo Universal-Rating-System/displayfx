@@ -9,7 +9,58 @@
 
 # Overview
 
-______________________________________________________________________
+DisplayFX is a Python library that provides a simple and effective text-based progress indicator for console applications. It is particularly useful for long-running tasks where visual feedback on progress is needed.
+
+### Key Features
+
+- **Text-based Progress Bar**: Visualizes progress using characters in the terminal.
+- **Percentage Markers**: Automatically places markers (e.g., 20%, 40%, etc.) along the bar.
+- **Customizable**: Allows configuration of the progress bar length and the message displayed alongside it.
+- **Lightweight**: Minimal dependencies, primarily relying on `beetools`.
+
+## Installation
+
+You can install DisplayFX via pip:
+
+```bash
+pip install displayfx
+```
+
+Or using poetry:
+
+```bash
+poetry add displayfx
+```
+
+## Usage
+
+Here is a simple example of how to use DisplayFX in your project:
+
+```python
+import time
+from displayfx import DisplayFx
+
+# Define the maximum value (total steps)
+max_val = 100
+
+# Initialize DisplayFx
+# p_msg: The message to display before the progress bar
+# p_bar_len: The length of the progress bar in characters
+progress_bar = DisplayFx(p_max_val=max_val, p_msg="Processing items: ", p_bar_len=50)
+
+# Simulate a process
+for i in range(max_val):
+    # Perform your task here
+    time.sleep(0.05)
+
+    # Update the progress bar with the current index
+    progress_bar.update(i)
+```
+
+## Requirements
+
+- Python >= 3.10
+- `beetools` (>=5.2.4)
 
 [cicd_codestyle_img]: https://img.shields.io/badge/code%20style-black-000000.svg "Black"
 [cicd_codestyle_lnk]: https://github.com/psf/black "Black"
